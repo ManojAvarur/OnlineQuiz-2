@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Quiz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/uikit/css/uikit.min.css"/>
+    <script src="../js/uikit/uikit.min.js"></script>
+    <script src="../js/uikit/uikit-icons.min.js"></script>
+   
+</head>
+<body>
+
+
+<div class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding" data-src="../img/login.jpg" uk-img uk-height-viewport>
+
+    <div class="uk-card uk-card-secondary uk-card-body uk-align-center uk-text-center uk-position-center uk-margin-remove-top" style="opacity: 0.9; border-radius: 16px;">
+        <form class="uk-margin-medium" action="../php/registration_result.php" method="post" class="uk-form-width-large uk-align-center">
+            <label>
+                <input type="email" placeholder="EMAIL" class="uk-input" name="email" required style="border-radius: 16px;">
+            </label>
+    
+            <br><br>
+            <label>
+                <input type="date" placeholder="DATE" class="uk-input" name="date" required style="border-radius: 16px;">
+            </label>
+    
+            <br><br>
+            <label>
+                <input type="password" name="password" id="1" required="required" class="uk-input"
+                       placeholder="PASSWORD" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                       title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/ style="border-radius: 16px;">
+            </label>
+            <br>
+            <br>
+            <label>
+                <input class="uk-checkbox" type="checkbox" onclick="myFunction()"/ style="border-radius: 16px;"> &nbsp;
+                    Show Password
+            </label>
+    
+            <label>
+                <input type="hidden" value="signup" name="type">
+            </label>
+    
+            <br>
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("1");
+                    if (x.type === "password") {
+                        x.type = "text";
+                    } else {
+                        x.type = "password";
+                    }
+                }
+            </script>
+    
+            <br>
+            <button class="uk-button-large" type="submit"
+                    style="color: black;border-radius: 100px;background-color: #ffffff;width: 150px;font-size: 17px;">
+               <b>SIGN IN</b> 
+            </button>
+    
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <button class="uk-button-large" type="reset"
+                        style="color: black;border-radius: 100px;background-color: #ffffff;width: 150px;font-size: 17px;">
+                  <b>RESET</b>  
+                </button>
+    
+    
+        </form>
+        <hr class="uk-divider-icon uk-text-secondary">
+        <br>
+       <a  href="StartingPage.html" class="uk-test-secondary" style="text-decoration: dotted;"> <p class="uk-test-secondary uk-text center">Click Here For Starting Page</p> </a>
+    </div>
+
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/uikit/css/uikit.min.css"/>
+    <script src="../js/uikit/uikit.min.js"></script>
+    <script src="../js/uikit/uikit-icons.min.js"></script>
+    <style>
+        .insideup a {
+            padding: 30px 10px 30px 10px;
+            margin-left: 50%;
+        }
+
+        /* The message box is shown when the user clicks on the password field */
+        #message {
+            display: none;
+            background: #f1f1f1;
+            color: #000;
+            position: relative;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        #message p {
+            padding: 10px 35px;
+            font-size: 18px;
+        }
+
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+            color: green;
+        }
+
+        .valid:before {
+            position: relative;
+            left: -35px;
+            content: "✔";
+        }
+
+        /* Add a red text color and an "x" when the requirements are wrong */
+        .invalid {
+            color: red;
+        }
+
+        .invalid:before {
+            position: relative;
+            left: -35px;
+            content: "✖";
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding" data-src="../img/registration2.jpg" uk-img uk-height-viewport>
+
+
+<div class="uk-card uk-card-secondary uk-card-body uk-align-center uk-text-center uk-position-center uk-margin-remove-top uk-margin-remove-bottom" style="opacity: 0.9; border-radius: 16px;">
+
+    <form class="uk-margin-medium" action="../php/VALIDATION.php" method="post" class="uk-form-width-large uk-align-center">
+        <label>
+            <input type="text" name="username" id="1" required="required" class="uk-input" placeholder="EMAIL"/ style="border-radius: 16px;">
+        </label>
+        <br>
+        <br>
+        <label>
+            <input type="password" name="password" id="2" required="required" class="uk-input"
+                   placeholder="PASSWORD" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/ style="border-radius: 16px;">
+        </label>
+        <br> <br>
+        <label>
+            <input class="uk-checkbox" type="checkbox" onclick="myFunction()" / style="border-radius: 16px;"> &nbsp;
+            Show Password
+        </label>
+
+        <br>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("2");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
+        <br>
+        <label>
+            <input type="hidden" value="registration" name="type">
+        </label>
+        <button class="uk-button" type="submit"
+                style="color: black;border-radius: 15px;background-color: #ffffff;width: 150px;font-size: 17px;">
+           <b>SIGN IN</b>
+        </button>
+        &nbsp; &nbsp;
+        <button class="uk-button" type="reset"
+                style="color: black;border-radius: 15px;background-color: #ffffff;width: 150px;font-size: 17px;">
+          <b>RESET</b>
+        </button>
+    </form>
+    <a  href="StartingPage.html" class="uk-test-secondary "> <p class="uk-test-secondary uk-text-primary uk-text center">Click Here For Starting Page</p> </a>
+
+    <hr class="uk-divider-icon uk-text-secondary">
+    <a href="SIGNUP.html" class="uk-margin-remove-top" >
+        <button class="uk-button" type="submit"
+                style="color: black;border-radius: 15px;background-color: #ffffff;width: 150px;font-size: 17px;">
+            <b>SIGN UP</b> 
+        </button>
+    </a>
+
+
+</div>
+
+</div>
+</body>
+</html>
